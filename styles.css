@@ -1,0 +1,61 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  .screen {
+    display: none;
+  }
+  
+  .screen.active {
+    display: block;
+  }
+  
+  h2 {
+    font-weight: 700;
+    font-size: 1.75rem;
+  }
+  
+  .container {
+    max-width: 430px;
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.5rem;
+  }
+  
+  .btn {
+    font-size: 1.15rem;
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.75rem;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
+  }
+  
+  .screen p, .screen label {
+    font-size: 1.05rem;
+  }
+  
+  #checkoutItems p, #reviewItems p {
+    margin-bottom: 6px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+    padding-left: 8px;
+  }
+  
+  .form-check-label {
+    font-weight: 500;
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  }
+  

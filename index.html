@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiosk Ordering System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+
+  <div class="container p-4 border rounded bg-white shadow-lg" style="max-width: 400px;">
+
+    <!-- Welcome Screen -->
+    <div class="screen active" id="welcomeScreen">
+      <h2 class="text-center mb-4">WELCOME</h2>
+      <button class="btn btn-primary w-100" onclick="showScreen('categoriesScreen')">START ORDER</button>
+    </div>
+
+    <!-- Categories Screen -->
+    <div class="screen" id="categoriesScreen">
+      <h2 class="text-center mb-4">CATEGORIES</h2>
+      <div class="d-grid gap-2">
+        <button class="btn btn-outline-dark" onclick="showScreen('burgersScreen')">BURGERS</button>
+        <button class="btn btn-outline-dark" onclick="showScreen('drinksScreen')">DRINKS</button>
+        <button class="btn btn-outline-dark" onclick="showScreen('dessertsScreen')">DESSERTS</button>
+        <button class="btn btn-outline-dark" onclick="showScreen('mealsScreen')">MEALS</button>
+        <button class="btn btn-success" onclick="showScreen('checkoutScreen')">Go to Checkout</button>
+      </div>
+    </div>
+
+    <!-- Burgers Screen -->
+    <div class="screen" id="burgersScreen">
+      <h2 class="text-center mb-3">BURGERS</h2>
+      <div class="d-grid gap-2">
+        <button class="btn btn-secondary" onclick="addItem('Classic Burger', 6.99)">Classic Burger - $6.99</button>
+        <button class="btn btn-secondary" onclick="addItem('Cheeseburger', 7.49)">Cheeseburger - $7.49</button>
+        <button class="btn btn-secondary" onclick="addItem('Bacon Burger', 8.99)">Bacon Burger - $8.99</button>
+        <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
+      </div>
+    </div>
+
+    <!-- Drinks Screen -->
+    <div class="screen" id="drinksScreen">
+      <h2 class="text-center mb-3">DRINKS</h2>
+      <div class="d-grid gap-2">
+        <button class="btn btn-secondary" onclick="addItem('Soda', 1.99)">Soda - $1.99</button>
+        <button class="btn btn-secondary" onclick="addItem('Iced Tea', 2.49)">Iced Tea - $2.49</button>
+        <button class="btn btn-secondary" onclick="addItem('Milkshake', 3.99)">Milkshake - $3.99</button>
+        <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
+      </div>
+    </div>
+
+    <!-- Desserts Screen -->
+    <div class="screen" id="dessertsScreen">
+      <h2 class="text-center mb-3">DESSERTS</h2>
+      <div class="d-grid gap-2">
+        <button class="btn btn-secondary" onclick="addItem('Ice Cream', 2.99)">Ice Cream - $2.99</button>
+        <button class="btn btn-secondary" onclick="addItem('Brownie', 3.49)">Brownie - $3.49</button>
+        <button class="btn btn-secondary" onclick="addItem('Cake Slice', 3.99)">Cake Slice - $3.99</button>
+        <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
+      </div>
+    </div>
+
+    <!-- Meals Screen -->
+    <div class="screen" id="mealsScreen">
+      <h2 class="text-center mb-3">MEALS</h2>
+      <div class="d-grid gap-2">
+        <button class="btn btn-secondary" onclick="addItem('Burger Combo', 9.99)">Burger Combo - $9.99</button>
+        <button class="btn btn-secondary" onclick="addItem('Chicken Meal', 10.49)">Chicken Meal - $10.49</button>
+        <button class="btn btn-secondary" onclick="addItem('Fish Fillet Meal', 11.25)">Fish Fillet Meal - $11.25</button>
+        <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
+      </div>
+    </div>
+
+    <!-- Checkout Screen -->
+    <div class="screen" id="checkoutScreen">
+      <h2 class="text-center mb-3">CHECKOUT</h2>
+      <div id="checkoutItems" class="mb-2"></div>
+      <p class="fw-bold">Total: $<span id="checkoutTotal">0.00</span></p>
+      <button class="btn btn-primary w-100" onclick="showScreen('reviewScreen')">CONFIRM ORDER</button>
+    </div>
+
+    <!-- Review Screen -->
+    <div class="screen" id="reviewScreen">
+      <h2 class="text-center mb-3">REVIEW ORDER</h2>
+      <div id="reviewItems" class="mb-2"></div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="payment" value="Gcash">
+        <label class="form-check-label">Gcash</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="payment" value="Card/Debit">
+        <label class="form-check-label">Card/Debit</label>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="radio" name="payment" value="Cash">
+        <label class="form-check-label">Cash</label>
+      </div>
+      <button class="btn btn-success w-100" onclick="showScreen('orderPlacedScreen')">PAY NOW</button>
+    </div>
+
+    <!-- Order Placed Screen -->
+    <div class="screen" id="orderPlacedScreen">
+      <h2 class="text-center mb-3">ORDER PLACED</h2>
+      <p class="text-center">Please proceed to the cashier to finalize your payment and collect your order</p>
+      <button class="btn btn-outline-primary w-100" onclick="resetOrder()">Back to Welcome</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
