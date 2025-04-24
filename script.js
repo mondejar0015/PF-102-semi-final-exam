@@ -1,6 +1,11 @@
 let cart = [];
 
 function showScreen(screenId) {
+  if ((screenId === 'checkoutScreen' || screenId === 'reviewScreen') && cart.length === 0) {
+    alert('Your cart is empty. Please add items before proceeding.');
+    return;
+  }
+
   document.querySelectorAll('.screen').forEach(screen => {
     screen.classList.remove('active');
   });
@@ -13,6 +18,7 @@ function showScreen(screenId) {
 function addItem(name, price) {
   cart.push({ name, price });
   alert(`${name} added to your cart.`);
+  updateButtonStates();
 }
 
 function updateCheckout() {
@@ -21,10 +27,20 @@ function updateCheckout() {
   container.innerHTML = '';
   let sum = 0;
 
-  cart.forEach(item => {
-    container.innerHTML += `<p>${item.name} - $${item.price.toFixed(2)}</p>`;
-    sum += item.price;
+  const grouped = {};
+
+  cart.forEach(({ name, price }) => {
+    if (!grouped[name]) {
+      grouped[name] = { price, quantity: 0 };
+    }
+    grouped[name].quantity += 1;
   });
+
+  for (let name in grouped) {
+    const { price, quantity } = grouped[name];
+    container.innerHTML += `<p>${name} x${quantity} - ₱${(price * quantity).toFixed(2)}</p>`;
+    sum += price * quantity;
+  }
 
   total.textContent = sum.toFixed(2);
 }
@@ -32,12 +48,34 @@ function updateCheckout() {
 function updateReview() {
   const container = document.getElementById('reviewItems');
   container.innerHTML = '';
-  cart.forEach(item => {
-    container.innerHTML += `<p>${item.name} - $${item.price.toFixed(2)}</p>`;
+
+  const grouped = {};
+
+  cart.forEach(({ name, price }) => {
+    if (!grouped[name]) {
+      grouped[name] = { price, quantity: 0 };
+    }
+    grouped[name].quantity += 1;
   });
+
+  for (let name in grouped) {
+    const { price, quantity } = grouped[name];
+    container.innerHTML += `<p>${name} x${quantity} - ₱${(price * quantity).toFixed(2)}</p>`;
+  }
 }
 
 function resetOrder() {
   cart = [];
   showScreen('welcomeScreen');
+  updateButtonStates();
+}
+
+function updateButtonStates() {
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const confirmBtn = document.getElementById('confirmBtn');
+
+  const isCartEmpty = cart.length === 0;
+
+  if (checkoutBtn) checkoutBtn.disabled = isCartEmpty;
+  if (confirmBtn) confirmBtn.disabled = isCartEmpty;
 }

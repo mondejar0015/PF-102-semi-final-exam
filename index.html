@@ -24,7 +24,7 @@
         <button class="btn btn-outline-dark" onclick="showScreen('drinksScreen')">DRINKS</button>
         <button class="btn btn-outline-dark" onclick="showScreen('dessertsScreen')">DESSERTS</button>
         <button class="btn btn-outline-dark" onclick="showScreen('mealsScreen')">MEALS</button>
-        <button class="btn btn-success" onclick="showScreen('checkoutScreen')">Go to Checkout</button>
+        <button class="btn btn-success" id="checkoutBtn" onclick="showScreen('checkoutScreen')">Go to Checkout</button>
       </div>
     </div>
 
@@ -32,9 +32,9 @@
     <div class="screen" id="burgersScreen">
       <h2 class="text-center mb-3">BURGERS</h2>
       <div class="d-grid gap-2">
-        <button class="btn btn-secondary" onclick="addItem('Classic Burger', 6.99)">Classic Burger - $6.99</button>
-        <button class="btn btn-secondary" onclick="addItem('Cheeseburger', 7.49)">Cheeseburger - $7.49</button>
-        <button class="btn btn-secondary" onclick="addItem('Bacon Burger', 8.99)">Bacon Burger - $8.99</button>
+        <button class="btn btn-secondary" onclick="addItem('Classic Burger', 69.00)">Classic Burger - ₱69.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Cheeseburger', 74.00)">Cheeseburger - ₱74.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Bacon Burger', 89.00)">Bacon Burger - ₱89.00</button>
         <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
       </div>
     </div>
@@ -43,9 +43,9 @@
     <div class="screen" id="drinksScreen">
       <h2 class="text-center mb-3">DRINKS</h2>
       <div class="d-grid gap-2">
-        <button class="btn btn-secondary" onclick="addItem('Soda', 1.99)">Soda - $1.99</button>
-        <button class="btn btn-secondary" onclick="addItem('Iced Tea', 2.49)">Iced Tea - $2.49</button>
-        <button class="btn btn-secondary" onclick="addItem('Milkshake', 3.99)">Milkshake - $3.99</button>
+        <button class="btn btn-secondary" onclick="addItem('Soda', 19.00)">Soda - ₱19.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Iced Tea', 24.00)">Iced Tea - ₱24.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Milkshake', 39.00)">Milkshake - ₱39.00</button>
         <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
       </div>
     </div>
@@ -54,9 +54,9 @@
     <div class="screen" id="dessertsScreen">
       <h2 class="text-center mb-3">DESSERTS</h2>
       <div class="d-grid gap-2">
-        <button class="btn btn-secondary" onclick="addItem('Ice Cream', 2.99)">Ice Cream - $2.99</button>
-        <button class="btn btn-secondary" onclick="addItem('Brownie', 3.49)">Brownie - $3.49</button>
-        <button class="btn btn-secondary" onclick="addItem('Cake Slice', 3.99)">Cake Slice - $3.99</button>
+        <button class="btn btn-secondary" onclick="addItem('Ice Cream', 29.00)">Ice Cream - ₱29.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Brownie', 34.00)">Brownie - ₱34.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Cake Slice', 39.00)">Cake Slice - ₱39.00</button>
         <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
       </div>
     </div>
@@ -65,9 +65,9 @@
     <div class="screen" id="mealsScreen">
       <h2 class="text-center mb-3">MEALS</h2>
       <div class="d-grid gap-2">
-        <button class="btn btn-secondary" onclick="addItem('Burger Combo', 9.99)">Burger Combo - $9.99</button>
-        <button class="btn btn-secondary" onclick="addItem('Chicken Meal', 10.49)">Chicken Meal - $10.49</button>
-        <button class="btn btn-secondary" onclick="addItem('Fish Fillet Meal', 11.25)">Fish Fillet Meal - $11.25</button>
+        <button class="btn btn-secondary" onclick="addItem('Burger Combo', 99.00)">Burger Combo - ₱99.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Chicken Meal', 104.00)">Chicken Meal - ₱104.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Fish Fillet Meal', 112.00)">Fish Fillet Meal - ₱112.00</button>
         <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
       </div>
     </div>
@@ -76,8 +76,8 @@
     <div class="screen" id="checkoutScreen">
       <h2 class="text-center mb-3">CHECKOUT</h2>
       <div id="checkoutItems" class="mb-2"></div>
-      <p class="fw-bold">Total: $<span id="checkoutTotal">0.00</span></p>
-      <button class="btn btn-primary w-100" onclick="showScreen('reviewScreen')">CONFIRM ORDER</button>
+      <p class="fw-bold">Total: ₱<span id="checkoutTotal">0.00</span></p>
+      <button class="btn btn-primary w-100" id="confirmBtn" onclick="showScreen('reviewScreen')">CONFIRM ORDER</button>
     </div>
 
     <!-- Review Screen -->
