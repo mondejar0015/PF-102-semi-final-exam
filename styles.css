@@ -1,61 +1,114 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f8f9fa;
-  }
-  
-  .screen {
-    display: none;
-  }
-  
-  .screen.active {
-    display: block;
-  }
-  
-  h2 {
-    font-weight: 700;
-    font-size: 1.75rem;
-  }
-  
-  .container {
-    max-width: 430px;
-    border-radius: 1.5rem;
-    background: #fff;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    padding: 2rem 1.5rem;
-  }
-  
-  .btn {
-    font-size: 1.15rem;
-    transition: all 0.2s ease-in-out;
-    border-radius: 0.75rem;
-  }
-  
-  .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .btn:active {
-    transform: scale(0.98);
-  }
-  
-  .screen p, .screen label {
-    font-size: 1.05rem;
-  }
-  
-  #checkoutItems p, #reviewItems p {
-    margin-bottom: 6px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 4px;
-    padding-left: 8px;
-  }
-  
-  .form-check-label {
-    font-weight: 500;
-  }
-  
-  button:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
-  }
-  
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+.container {
+  max-width: 430px;
+  border-radius: 1.5rem;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1.5rem;
+}
+
+.btn {
+  font-size: 1.15rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.75rem;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.screen p, .screen label {
+  font-size: 1.05rem;
+}
+
+#checkoutItems p, #reviewItems p {
+  margin-bottom: 6px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+  padding-left: 8px;
+}
+
+.form-check-label {
+  font-weight: 500;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Menu Item Layout */
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-item-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Style buttons */
+.btn-secondary {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+.btn-secondary span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Logo Styling */
+.logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.text-center img {
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-center img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}

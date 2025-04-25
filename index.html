@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kiosk Ordering System</title>
+  <title>Tindahan ni Angel</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
 
-  <div class="container p-4 border rounded bg-white shadow-lg" style="max-width: 400px;">
+  <div class="container p-4 border rounded bg-white shadow-lg" style="max-width: 430px;">
+
+    <!-- Logo and Title -->
+    <div class="text-center mb-4">
+      <img src="Logo ni Angel.png" alt="Tindahan ni Angel Logo" class="logo-img">
+      <h1 class="mt-2" style="font-size: 1.5rem; font-weight: 700;">Tindahan ni Angel</h1>
+    </div>
 
     <!-- Welcome Screen -->
     <div class="screen active" id="welcomeScreen">
@@ -32,9 +38,24 @@
     <div class="screen" id="burgersScreen">
       <h2 class="text-center mb-3">BURGERS</h2>
       <div class="d-grid gap-2">
-        <button class="btn btn-secondary" onclick="addItem('Classic Burger', 69.00)">Classic Burger - ₱69.00</button>
-        <button class="btn btn-secondary" onclick="addItem('Cheeseburger', 74.00)">Cheeseburger - ₱74.00</button>
-        <button class="btn btn-secondary" onclick="addItem('Bacon Burger', 89.00)">Bacon Burger - ₱89.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Classic Burger', 69.00)">
+          <div class="menu-item">
+            <img src="Classic Burger.jpeg" alt="Classic Burger" class="menu-item-img">
+            <span>Classic Burger - ₱69.00</span>
+          </div>
+        </button>
+        <button class="btn btn-secondary" onclick="addItem('Cheeseburger', 74.00)">
+          <div class="menu-item">
+            <img src="Cheese Burger.jpg" alt="Cheeseburger" class="menu-item-img">
+            <span>Cheeseburger - ₱74.00</span>
+          </div>
+        </button>
+        <button class="btn btn-secondary" onclick="addItem('Bacon Burger', 89.00)">
+          <div class="menu-item">
+            <img src="Bacon Burger.webp" alt="Bacon Burger" class="menu-item-img">
+            <span>Bacon Burger - ₱89.00</span>
+          </div>
+        </button>
         <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
       </div>
     </div>
@@ -43,9 +64,24 @@
     <div class="screen" id="drinksScreen">
       <h2 class="text-center mb-3">DRINKS</h2>
       <div class="d-grid gap-2">
-        <button class="btn btn-secondary" onclick="addItem('Soda', 19.00)">Soda - ₱19.00</button>
-        <button class="btn btn-secondary" onclick="addItem('Iced Tea', 24.00)">Iced Tea - ₱24.00</button>
-        <button class="btn btn-secondary" onclick="addItem('Milkshake', 39.00)">Milkshake - ₱39.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Soda', 19.00)">
+          <div class="menu-item">
+            <img src="Soda.jpeg" alt="Soda" class="menu-item-img">
+            <span>Soda - ₱19.00</span>
+          </div>
+        </button>
+        <button class="btn btn-secondary" onclick="addItem('Iced Tea', 24.00)">
+          <div class="menu-item">
+            <img src="Iced Tea.webp" alt="Iced Tea" class="menu-item-img">
+            <span>Iced Tea - ₱24.00</span>
+          </div>
+        </button>
+        <button class="btn btn-secondary" onclick="addItem('Milkshake', 39.00)">
+          <div class="menu-item">
+            <img src="Milk Shake.jpeg" alt="Milkshake" class="menu-item-img">
+            <span>Milkshake - ₱39.00</span>
+          </div>
+        </button>
         <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
       </div>
     </div>
@@ -54,9 +90,24 @@
     <div class="screen" id="dessertsScreen">
       <h2 class="text-center mb-3">DESSERTS</h2>
       <div class="d-grid gap-2">
-        <button class="btn btn-secondary" onclick="addItem('Ice Cream', 29.00)">Ice Cream - ₱29.00</button>
-        <button class="btn btn-secondary" onclick="addItem('Brownie', 34.00)">Brownie - ₱34.00</button>
-        <button class="btn btn-secondary" onclick="addItem('Cake Slice', 39.00)">Cake Slice - ₱39.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Ice Cream', 29.00)">
+          <div class="menu-item">
+            <img src="Ice Cream.jpg" alt="Ice Cream" class="menu-item-img">
+            <span>Ice Cream - ₱29.00</span>
+          </div>
+        </button>
+        <button class="btn btn-secondary" onclick="addItem('Brownie', 34.00)">
+          <div class="menu-item">
+            <img src="Brownie.jpg" alt="Brownie" class="menu-item-img">
+            <span>Brownie - ₱34.00</span>
+          </div>
+        </button>
+        <button class="btn btn-secondary" onclick="addItem('Cake Slice', 39.00)">
+          <div class="menu-item">
+            <img src="Silce Cake.webp" alt="Cake Slice" class="menu-item-img">
+            <span>Cake Slice - ₱39.00</span>
+          </div>
+        </button>
         <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
       </div>
     </div>
@@ -65,45 +116,69 @@
     <div class="screen" id="mealsScreen">
       <h2 class="text-center mb-3">MEALS</h2>
       <div class="d-grid gap-2">
-        <button class="btn btn-secondary" onclick="addItem('Burger Combo', 99.00)">Burger Combo - ₱99.00</button>
-        <button class="btn btn-secondary" onclick="addItem('Chicken Meal', 104.00)">Chicken Meal - ₱104.00</button>
-        <button class="btn btn-secondary" onclick="addItem('Fish Fillet Meal', 112.00)">Fish Fillet Meal - ₱112.00</button>
+        <button class="btn btn-secondary" onclick="addItem('Burger Combo', 99.00)">
+          <div class="menu-item">
+            <img src="Burger Combo.jpg" alt="Burger Combo" class="menu-item-img">
+            <span>Burger Combo - ₱99.00</span>
+          </div>
+        </button>
+        <button class="btn btn-secondary" onclick="addItem('Chicken Meal', 104.00)">
+          <div class="menu-item">
+            <img src="Chicken Meal.jpg" alt="Chicken Meal" class="menu-item-img">
+            <span>Chicken Meal - ₱104.00</span>
+          </div>
+        </button>
+        <button class="btn btn-secondary" onclick="addItem('Fish Fillet Meal', 112.00)">
+          <div class="menu-item">
+            <img src="Fish Fillet.jpg" alt="Fish Fillet Meal" class="menu-item-img">
+            <span>Fish Fillet Meal - ₱112.00</span>
+          </div>
+        </button>
         <button class="btn btn-outline-secondary" onclick="showScreen('categoriesScreen')">Back to Categories</button>
       </div>
     </div>
 
     <!-- Checkout Screen -->
-    <div class="screen" id="checkoutScreen">
-      <h2 class="text-center mb-3">CHECKOUT</h2>
-      <div id="checkoutItems" class="mb-2"></div>
-      <p class="fw-bold">Total: ₱<span id="checkoutTotal">0.00</span></p>
-      <button class="btn btn-primary w-100" id="confirmBtn" onclick="showScreen('reviewScreen')">CONFIRM ORDER</button>
-    </div>
+<div class="screen" id="checkoutScreen">
+  <div class="d-flex align-items-center mb-3">
+    <button class="btn btn-outline-secondary btn-sm me-2" onclick="showScreen('categoriesScreen')">← Back</button>
+    <h2 class="mb-0">CHECKOUT</h2>
+  </div>
+  <div id="checkoutItems" class="mb-2"></div>
+  <p class="fw-bold">Total: ₱<span id="checkoutTotal">0.00</span></p>
+  <button class="btn btn-primary w-100" id="confirmBtn" onclick="showScreen('reviewScreen')">CONFIRM ORDER</button>
+</div>
 
-    <!-- Review Screen -->
-    <div class="screen" id="reviewScreen">
-      <h2 class="text-center mb-3">REVIEW ORDER</h2>
-      <div id="reviewItems" class="mb-2"></div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="payment" value="Gcash">
-        <label class="form-check-label">Gcash</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="payment" value="Card/Debit">
-        <label class="form-check-label">Card/Debit</label>
-      </div>
-      <div class="form-check mb-3">
-        <input class="form-check-input" type="radio" name="payment" value="Cash">
-        <label class="form-check-label">Cash</label>
-      </div>
-      <button class="btn btn-success w-100" onclick="showScreen('orderPlacedScreen')">PAY NOW</button>
-    </div>
+<!-- Review Screen -->
+<div class="screen" id="reviewScreen">
+  <div class="d-flex align-items-center mb-3">
+    <button class="btn btn-outline-secondary btn-sm me-2" onclick="showScreen('checkoutScreen')">← Back</button>
+    <h2 class="mb-0">REVIEW ORDER</h2>
+  </div>
+  <div id="reviewItems" class="mb-2"></div>
+  <p class="fw-bold">Total: ₱<span id="reviewTotal">0.00</span></p>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="payment" value="Gcash">
+    <label class="form-check-label">Gcash</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="payment" value="Card/Debit">
+    <label class="form-check-label">Card/Debit</label>
+  </div>
+  <div class="form-check mb-3">
+    <input class="form-check-input" type="radio" name="payment" value="Cash">
+    <label class="form-check-label">Cash</label>
+  </div>
+  <button class="btn btn-success w-100" onclick="showScreen('orderPlacedScreen')">PAY NOW</button>
+</div>
+
+
 
     <!-- Order Placed Screen -->
     <div class="screen" id="orderPlacedScreen">
       <h2 class="text-center mb-3">ORDER PLACED</h2>
-      <p class="text-center">Please proceed to the cashier to finalize your payment and collect your order</p>
-      <button class="btn btn-outline-primary w-100" onclick="resetOrder()">Back to Welcome</button>
+      <p class="text-center">Your order has been successfully placed!</p>
+      <button class="btn btn-primary w-100" onclick="resetOrder()">NEW ORDER</button>
     </div>
 
   </div>
